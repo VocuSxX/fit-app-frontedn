@@ -81,7 +81,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
 
   Future<void> fetchGhost() async {
     final url = Uri.parse(
-      'http://127.0.0.1:8000/workout_template/${widget.planId}?current_workout_id=${widget.workoutId}',
+      'https://vfa-tyx7.onrender.com/workout_template/${widget.planId}?current_workout_id=${widget.workoutId}',
     );
     try {
       final response = await http.get(url, headers: authHeaders);
@@ -104,7 +104,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         int.tryParse(currentReps[setKey] ?? '') ??
         ghostSet['powtorzenia'].toInt();
 
-    final url = Uri.parse('http://127.0.0.1:8000/sets');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/sets');
     try {
       await http.post(
         url,
@@ -123,7 +123,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   }
 
   Future<void> saveNoteToDB(int exerciseId, String noteText) async {
-    final url = Uri.parse('http://127.0.0.1:8000/notes');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/notes');
     try {
       await http.post(
         url,

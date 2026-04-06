@@ -29,7 +29,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
 
   Future<void> fetchCatalog() async {
     setState(() => isLoading = true);
-    final url = Uri.parse('http://127.0.0.1:8000/catalog');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/catalog');
 
     try {
       final response = await http.get(
@@ -307,7 +307,7 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
     if (nameController.text.isEmpty) return;
     setState(() => isSaving = true);
 
-    final url = Uri.parse('http://127.0.0.1:8000/exercises');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/exercises');
     try {
       final response = await http.post(
         url,

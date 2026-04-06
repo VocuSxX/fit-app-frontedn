@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Future<void> fetchPlans() async {
-    final url = Uri.parse('http://127.0.0.1:8000/plans');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/plans');
     try {
       final response = await http.get(url, headers: authHeaders);
       if (response.statusCode == 200) {
@@ -65,7 +65,9 @@ class _MainScreenState extends State<MainScreen> {
 
   Future<void> fetchPlanPreview(int planId) async {
     setState(() => isPreviewLoading = true);
-    final url = Uri.parse('http://127.0.0.1:8000/workout_template/$planId');
+    final url = Uri.parse(
+      'https://vfa-tyx7.onrender.com/workout_template/$planId',
+    );
     try {
       final response = await http.get(url, headers: authHeaders);
       if (response.statusCode == 200) {
@@ -81,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Future<void> fetchHistory() async {
-    final url = Uri.parse('http://127.0.0.1:8000/history');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/history');
     try {
       final response = await http.get(url, headers: authHeaders);
       if (response.statusCode == 200) {
@@ -96,7 +98,7 @@ class _MainScreenState extends State<MainScreen> {
     if (selectedPlanId == null) return;
     String today = DateFormat('dd.MM.yyyy').format(DateTime.now());
 
-    final url = Uri.parse('http://127.0.0.1:8000/workouts');
+    final url = Uri.parse('https://vfa-tyx7.onrender.com/workouts');
     try {
       final response = await http.post(
         url,

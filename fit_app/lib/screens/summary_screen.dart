@@ -34,7 +34,9 @@ class _SummaryScreenState extends State<SummaryScreen> {
   }
 
   Future<void> fetchReport() async {
-    final url = Uri.parse('http://127.0.0.1:8000/workouts/${widget.workoutId}');
+    final url = Uri.parse(
+      'https://vfa-tyx7.onrender.com/workouts/${widget.workoutId}',
+    );
     try {
       final response = await http.get(url, headers: authHeaders);
       if (response.statusCode == 200) {

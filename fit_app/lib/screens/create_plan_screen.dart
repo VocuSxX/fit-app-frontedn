@@ -41,7 +41,7 @@ class _CreatePlanScreenState extends State<CreatePlanScreen> {
     try {
       // Zapis Planu
       final resPlan = await http.post(
-        Uri.parse('http://127.0.0.1:8000/plans'),
+        Uri.parse('https://vfa-tyx7.onrender.com/plans'),
         headers: authHeaders,
         body: jsonEncode({"name": nameController.text}),
       );
@@ -50,7 +50,7 @@ class _CreatePlanScreenState extends State<CreatePlanScreen> {
 
       // Zapis Treningu
       final resWorkout = await http.post(
-        Uri.parse('http://127.0.0.1:8000/workouts'),
+        Uri.parse('https://vfa-tyx7.onrender.com/workouts'),
         headers: authHeaders,
         body: jsonEncode({"date": "TEMPLATE", "plan_id": planId}),
       );
@@ -65,7 +65,7 @@ class _CreatePlanScreenState extends State<CreatePlanScreen> {
 
         for (int i = 0; i < setsCount; i++) {
           await http.post(
-            Uri.parse('http://127.0.0.1:8000/sets'),
+            Uri.parse('https://vfa-tyx7.onrender.com/sets'),
             headers: authHeaders,
             body: jsonEncode({
               "weight": 0,
